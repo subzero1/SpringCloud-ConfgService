@@ -7,10 +7,21 @@ spring:
     config:
       server:
         git:
-#          uri: http://172.24.16.74/jack/config-only-a-demo.git #配置文件所在仓库
           uri: http://172.24.16.74/qyzx-group/qyzx-conf.git #配置文件所在仓库
           default-label: master #配置文件分支
           search-paths: conf  #配置文件所在根目录
+    bus:
+      refresh:
+        enabled: true
+  kafka:
+    bootstrap-servers: 172.53.49.16:9092
+    consumer:
+      group-id: test
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 # Eureka配置
 eureka:
   instance:
