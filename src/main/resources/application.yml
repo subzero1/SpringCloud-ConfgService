@@ -8,19 +8,13 @@ spring:
       server:
         git:
 #          uri: http://172.24.16.74/jack/config-only-a-demo.git #配置文件所在仓库
-          uri: http://172.24.16.74/qyzx-group/qyzx-conf.git #配置文件所在仓库
+          #uri: https://github.com/huzhicheng/config-only-a-demo #配置文件所在仓库
+#          uri: https://github.com/subzero1/config-only-a-demo #配置文件所在仓库
+          uri: https://github.com/subzero1/qyzx-conf #配置文件所在仓库
           default-label: master #配置文件分支
+#          search-paths: config  #配置文件所在根目录
           search-paths: conf  #配置文件所在根目录
-# Eureka配置
 eureka:
-  instance:
-    # eureka服务端的实例名称
-    hostname: client
-    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}:${random.value}
-    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
-logging:
-  level:
-    org.springframework.cloud.gateway: debug
+      defaultZone: http://localhost:8761/eureka/
